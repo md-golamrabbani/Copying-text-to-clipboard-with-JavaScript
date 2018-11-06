@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Copy cut to clipboard</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+	<div class="form-group">
+		<textarea class="form-control" id="tsk"></textarea>
+	</div>
+	<button class="btn btn-primary" onclick="clipboard('copy')">Copy</button>
+	<button class="btn btn-danger" onclick="clipboard('cut')">Cut</button>
+</div>
+
+<script type="text/javascript">
+	function clipboard(value){
+		var tsk = document.getElementById('tsk');
+		tsk.select();
+		if(value == 'copy'){
+			document.execCommand('copy');
+		}
+		else{
+			document.execCommand('cut');
+		}
+	}
+</script>
+</body>
+</html>
